@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jialin | Global Growth & AIGC Specialist</title>
+    <title>Jialin | Overseas Marketing & AIGC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -12,13 +12,30 @@
         .bg-purple-soft { background-color: #E9D5FF; }
         .bg-blue-soft { background-color: #818CF8; }
         .rounded-custom { border-radius: 2rem; }
+        
+        /* 头像职场化模拟：圆形裁剪 + 聚焦面部 */
+        .avatar-frame {
+            width: 220px; /* 缩小尺寸 */
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background-color: #f0f0f0;
+        }
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 重点：向上偏移，确保聚焦在头部和肩部，营造LinkedIn证件照感 */
+            object-position: center 15%; 
+        }
+
         .wavy-line {
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q25 0 50 10 T100 10' fill='none' stroke='%23E2F370' stroke-width='2'/%3E%3C/svg%3E");
             background-repeat: repeat-x;
             height: 20px;
         }
-        .video-placeholder { aspect-ratio: 9 / 16; background: #eee; border-radius: 1.5rem; overflow: hidden; }
-        /* 微信弹窗样式 */
         #wechat-modal { display: none; }
         #wechat-modal.active { display: flex; }
     </style>
@@ -27,214 +44,167 @@
 
     <!-- 导航栏 -->
     <nav class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
-        <div class="text-2xl font-extrabold tracking-tighter">JIALIN <span class="text-lime-500">●</span></div>
+        <div class="text-2xl font-extrabold tracking-tighter italic">JIALIN <span class="text-lime-500">●</span></div>
         <div class="hidden md:flex space-x-8 font-semibold text-sm">
-            <a href="#portfolio" class="hover:text-gray-500">Portfolio</a>
-            <a href="#experience" class="hover:text-gray-500">Experience</a>
-            <a href="#projects" class="hover:text-gray-500">Projects</a>
+            <a href="#portfolio" class="hover:text-blue-500">Portfolio</a>
+            <a href="#experience" class="hover:text-blue-500">Experience</a>
+            <a href="#projects" class="hover:text-blue-500">Projects</a>
         </div>
-        <a href="#contact" class="bg-lime px-6 py-2 rounded-full font-bold text-sm shadow-sm hover:scale-105 transition">Connect Me</a>
+        <a href="#contact" class="bg-black text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-gray-800 transition">Get in Touch</a>
     </nav>
 
     <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-8 py-12 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <h1 class="text-6xl md:text-7xl font-extrabold leading-tight mb-6">
+    <section class="max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-3/5 text-center md:text-left">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
                 Hello there! <br/>
-                <span class="relative">
-                    I'm Jialin.
-                    <div class="absolute -right-16 top-4 hidden md:block">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M10 10L50 50M50 10L10 50" stroke="#E2F370" stroke-width="8"/></svg>
-                    </div>
-                </span>
+                <span class="text-blue-600">I'm Jialin.</span>
             </h1>
-            <p class="text-xl text-gray-600 mb-8 max-w-md">
-                海外市场营销专家 / 本土化内容深耕者 / AIGC 创作者。助力品牌出海实现从 0 到 1 的百万级爆发。
-            </p>
-            <div class="flex space-x-4">
-                <a href="#contact" class="bg-blue-soft text-white px-8 py-4 rounded-full font-bold shadow-lg">Get Started</a>
-                <div class="flex items-center space-x-2 text-blue-soft font-bold">
-                    <span>Scroll to explore</span>
-                    <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                </div>
+            <!-- 要求的三个标签 -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
+                <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-bold">🚀 海外市场营销专家</span>
+                <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-bold">🌍 本土化内容深耕者</span>
+                <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-bold">🤖 AIGC 创作者</span>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <a href="#portfolio" class="bg-blue-soft text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-blue-700 transition">View My Works</a>
+                <p class="text-gray-400 text-sm italic">Focusing on high-growth global branding.</p>
             </div>
         </div>
-        <div class="relative">
-            <div class="bg-purple-soft rounded-custom p-8 relative z-10 overflow-hidden shadow-xl">
-                <!-- 占位图：建议替换为您简历中的个人照片 -->
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800" alt="Profile" class="rounded-2xl grayscale hover:grayscale-0 transition duration-500">
-                <div class="absolute bottom-4 left-4 bg-white/80 backdrop-blur-md p-4 rounded-xl border border-white">
-                    <p class="text-xs font-bold text-purple-600">BASED IN SHANGHAI</p>
-                    <p class="text-sm font-extrabold">GLOBAL GROWTH EXPERT</p>
-                </div>
+
+        <!-- 缩小后的职场风格头像 -->
+        <div class="md:w-2/5 flex justify-center mt-12 md:mt-0 relative">
+            <div class="avatar-frame relative z-10">
+                <!-- 请确保图片文件名为 my_photo.jpg -->
+                <img src="my_photo.jpg" alt="Jialin Profile">
             </div>
-            <!-- 装饰元素 -->
-            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-lime rounded-full -z-0 opacity-50"></div>
+            <!-- 背景装饰小圆圈 -->
+            <div class="absolute -top-4 -right-4 w-24 h-24 bg-lime rounded-full -z-0 opacity-40"></div>
+            <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-soft rounded-full -z-0"></div>
         </div>
     </section>
 
-    <!-- 作品集 Section -->
-    <section id="portfolio" class="py-24 bg-gray-50">
+    <!-- 作品集 Section (保持之前逻辑) -->
+    <section id="portfolio" class="py-20 bg-gray-50 rounded-[3rem]">
         <div class="max-w-7xl mx-auto px-8">
             <div class="flex items-center space-x-4 mb-12">
-                <h2 class="text-4xl font-extrabold italic">My Portfolio</h2>
+                <h2 class="text-3xl font-extrabold italic">Featured Portfolio</h2>
                 <div class="wavy-line flex-grow"></div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-                <!-- 视频作品 1 -->
-                <div class="video-placeholder relative group">
-                    <iframe src="https://www.tiktok.com/embed/v2/7391457385005321528" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                    <iframe src="https://www.tiktok.com/embed/v2/7391457385005321528" class="w-full h-full" frameborder="0"></iframe>
                 </div>
-                <!-- 视频作品 2 -->
-                <div class="video-placeholder flex items-center justify-center bg-gray-200">
-                    <span class="text-gray-400 font-bold italic">Works Placeholder 02</span>
+                <div class="aspect-[9/16] bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-400">
+                    <p class="text-gray-400 font-bold">Portfolio Video 02</p>
                 </div>
-                <!-- 视频作品 3 -->
-                <div class="video-placeholder flex items-center justify-center bg-gray-200">
-                    <span class="text-gray-400 font-bold italic">Works Placeholder 03</span>
+                <div class="aspect-[9/16] bg-gray-200 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-400">
+                    <p class="text-gray-400 font-bold">Portfolio Video 03</p>
                 </div>
             </div>
 
-            <!-- AIGC Works Section -->
-            <div class="bg-lime p-12 rounded-custom relative overflow-hidden">
-                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <span class="bg-white px-4 py-1 rounded-full text-xs font-black uppercase mb-4 inline-block">Future Tech</span>
-                        <h3 class="text-5xl font-black mb-6">AIGC Works</h3>
-                        <p class="font-semibold opacity-80">探索人工智能与内容的深度融合。利用 AI 工具赋能创意产出，重塑视觉表达边界。</p>
-                    </div>
-                    <div class="aspect-video bg-white/50 rounded-3xl flex items-center justify-center border-2 border-dashed border-white">
-                        <p class="font-bold text-gray-500">Video Placeholder (AIGC Work)</p>
-                    </div>
+            <!-- AIGC Works -->
+            <div class="bg-lime p-10 rounded-custom grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-4xl font-black mb-4 uppercase tracking-tighter">AIGC Creation</h3>
+                    <p class="font-bold opacity-70 mb-6">利用 AI 赋能创意产出，重塑视觉表达边界。即将更新最新 AIGC 探索作品。</p>
+                    <div class="bg-white/40 h-2 w-24 rounded-full"></div>
                 </div>
-                <div class="absolute top-[-20%] right-[-10%] opacity-20 transform rotate-12">
-                    <svg width="400" height="400" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.5" fill="none"/></svg>
+                <div class="aspect-video bg-white/50 rounded-2xl flex items-center justify-center text-gray-500 font-bold border-2 border-white">
+                    Video Placeholder (AIGC Link)
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 个人经历 Section (纵向交互时间轴) -->
+    <!-- 个人经历 Section -->
     <section id="experience" class="py-24 max-w-5xl mx-auto px-8">
-        <h2 class="text-4xl font-extrabold mb-16 text-center">My Journey</h2>
-        
-        <div class="relative border-l-4 border-gray-100 ml-6 space-y-16">
+        <h2 class="text-4xl font-extrabold mb-16">Career Timeline</h2>
+        <div class="space-y-12 border-l-2 border-gray-100 ml-4">
             <!-- Temu -->
-            <div class="relative pl-12 group">
-                <div class="absolute -left-[14px] top-0 w-6 h-6 bg-blue-soft rounded-full ring-8 ring-white transition group-hover:scale-125"></div>
-                <div class="flex flex-col md:flex-row md:justify-between mb-4">
-                    <div>
-                        <h3 class="text-2xl font-black">Temu | 海外市场营销专家</h3>
-                        <p class="text-blue-600 font-bold">2024.06 - 2026.03</p>
-                    </div>
-                    <p class="text-gray-400 font-bold">上海 · 市场部</p>
+            <div class="relative pl-10 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-soft rounded-full ring-4 ring-white"></div>
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-black">Temu | 海外市场营销专家</h3>
+                    <span class="text-blue-600 font-bold">2024.06 - 2026.03</span>
                 </div>
-                <ul class="space-y-4 text-gray-600">
-                    <li class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                        <b class="text-gray-900 block mb-1">本土化内容深耕与品牌资产沉淀</b>
-                        深挖欧区文化内核，建立“调研-策划-产出”闭环。独立编导落地30+场剧情实拍，本地化内容占比提至40%，产出多条单项预算超$30,000的高质感爆款。
-                    </li>
-                    <li class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                        <b class="text-gray-900 block mb-1">数据洞察驱动创意迭代</b>
-                        制定定制化分发策略，通过A/B测试提炼机制。核心内容爆款率从10%升至30%，首月ROI稳健保持在20%+。
-                    </li>
-                    <li class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                        <b class="text-gray-900 block mb-1">社媒矩阵搭建与全域增长</b>
-                        负责Instagram、TikTok 0-1运营，产出20+条百万播放视频，突破10万+粉丝，获客占比稳定在10%-20%。
-                    </li>
-                </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                        <p class="text-xs font-black text-gray-400 mb-2 uppercase">Core Achievement</p>
+                        <p class="text-sm leading-relaxed text-gray-600">落地30+场剧情实拍，将本土化内容占比提升至40%，产出单项预算超$30,000的爆款内容。</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                        <p class="text-xs font-black text-gray-400 mb-2 uppercase">Data Growth</p>
+                        <p class="text-sm leading-relaxed text-gray-600">成功将核心内容爆款率从10%提至30%，新增素材首月ROI稳健保持在20%+。</p>
+                    </div>
+                </div>
             </div>
-
             <!-- 上海奥深 -->
-            <div class="relative pl-12 group">
-                <div class="absolute -left-[14px] top-0 w-6 h-6 bg-purple-soft rounded-full ring-8 ring-white"></div>
-                <div class="flex flex-col md:flex-row md:justify-between mb-4">
-                    <div>
-                        <h3 class="text-2xl font-black">上海奥深电子商务有限公司 | 海外营销专员</h3>
-                        <p class="text-purple-600 font-bold">2023.01 - 2024.06</p>
-                    </div>
-                    <p class="text-gray-400 font-bold">上海 · 市场部</p>
+            <div class="relative pl-10 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 bg-gray-200 rounded-full ring-4 ring-white"></div>
+                <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                    <h3 class="text-xl font-black">上海奥深电子商务 | 海外营销专员</h3>
+                    <span class="text-gray-400 font-bold">2023.01 - 2024.06</span>
                 </div>
-                <ul class="space-y-4 text-gray-600">
-                    <li class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 italic">
-                        通过清晰的品牌定位，实现核心受众基数250%快速增长；黑五期间通过联动投流实现150%爆发式增长。
-                    </li>
-                </ul>
+                <p class="text-sm text-gray-500 italic">一年内实现核心受众基数250%快速增长，黑五期间实现150%爆发式增长。</p>
             </div>
         </div>
     </section>
 
     <!-- 项目经历 Section -->
-    <section id="projects" class="py-24 bg-white">
+    <section id="projects" class="py-24 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-8">
-            <h2 class="text-4xl font-extrabold mb-12 italic">Key Projects</h2>
+            <h2 class="text-3xl font-extrabold mb-12 italic">Professional Projects</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- 方块 1 -->
-                <div class="bg-lime p-10 rounded-custom flex flex-col justify-between hover:rotate-1 transition">
+                <div class="bg-purple-soft p-8 rounded-custom flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-start mb-8">
-                            <h3 class="text-3xl font-black leading-tight">Temu欧洲市场<br/>本对本商家推广项目</h3>
-                            <div class="bg-black text-white p-3 rounded-full">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                            </div>
-                        </div>
-                        <p class="text-sm font-bold opacity-80 mb-6 uppercase tracking-widest">Growth & Coordination</p>
-                        <div class="space-y-4 text-sm font-semibold">
-                            <p>• 搭建周/月运行复盘机制，确保广告侧与供给侧高频同步。</p>
-                            <p>• 孵化50+个爆品，带动类目广告GMV增长30%。</p>
-                            <p>• 将本对本广告花费占比从不到1%提升至5-8%。</p>
-                        </div>
+                        <h3 class="text-2xl font-black mb-6 leading-tight">Temu欧洲市场<br/>本对本商家推广</h3>
+                        <ul class="text-sm space-y-3 font-semibold opacity-80">
+                            <li>• 孵化50+个爆品，带动类目广告GMV增长30%</li>
+                            <li>• 广告花费占比从不到1%提升至5-8%</li>
+                            <li>• 确保广告侧与供给侧高频同步复盘</li>
+                        </ul>
                     </div>
                 </div>
-
-                <!-- 方块 2 -->
-                <div class="bg-blue-soft p-10 rounded-custom text-white flex flex-col justify-between hover:-rotate-1 transition">
+                <div class="bg-blue-soft text-white p-8 rounded-custom flex flex-col justify-between">
                     <div>
-                        <div class="flex justify-between items-start mb-8">
-                            <h3 class="text-3xl font-black leading-tight">Temu欧区女装<br/>本地化项目</h3>
-                            <div class="bg-white text-blue-soft p-3 rounded-full">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
-                            </div>
-                        </div>
-                        <p class="text-sm font-bold opacity-80 mb-6 uppercase tracking-widest">Localization & Strategy</p>
-                        <div class="space-y-4 text-sm">
-                            <p>• 拆解竞对策略，指导业务侧完成补品，民族风刺绣月销30W+。</p>
-                            <p>• 搭建本地化视觉矩阵，推动女装类目流量份额跃升超30%。</p>
-                        </div>
+                        <h3 class="text-2xl font-black mb-6 leading-tight">Temu欧区女装<br/>本地化项目</h3>
+                        <ul class="text-sm space-y-3 opacity-90">
+                            <li>• 排查竞品动向，提炼本土女装消费偏好</li>
+                            <li>• 民族风刺绣月度销售额突破30W+</li>
+                            <li>• 推动女装类目流量份额跃升超30%</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 联系方式 Section -->
-    <footer id="contact" class="py-24 bg-purple-soft rounded-t-[3rem] text-center">
+    <!-- Footer / Contact -->
+    <footer id="contact" class="py-20 bg-black text-white rounded-t-[3rem] text-center">
         <div class="max-w-4xl mx-auto px-8">
-            <h2 class="text-5xl font-black mb-12">Let's build something <br/> awesome together.</h2>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
-                <a href="mailto:sujialin1218@163.com" class="text-2xl font-bold border-b-4 border-black pb-1 hover:opacity-50 transition">sujialin1218@163.com</a>
-                <span class="text-2xl font-bold">15821233791</span>
+            <h2 class="text-4xl font-black mb-8">Ready to Scale Your Brand?</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <a href="mailto:sujialin1218@163.com" class="text-xl font-bold border-b-2 border-white pb-1 hover:text-lime-400 hover:border-lime-400 transition">sujialin1218@163.com</a>
+                <span class="text-xl font-bold opacity-60">15821233791</span>
             </div>
             
-            <!-- 社交图标 -->
-            <div class="flex justify-center space-x-6">
-                <!-- 微信图标 -->
-                <button onclick="toggleModal()" class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
-                    <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8.3,12.7c-0.2,0-0.5,0.1-0.7,0.2c-0.2,0.1-0.4,0.4-0.4,0.6c0,0.3,0.1,0.5,0.3,0.7c0.2,0.2,0.5,0.3,0.8,0.3 c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.3-0.7c0-0.3-0.1-0.5-0.3-0.7C8.8,12.8,8.6,12.7,8.3,12.7z M14.3,12.7 c-0.2,0-0.5,0.1-0.7,0.2c-0.2,0.1-0.4,0.4-0.4,0.6c0,0.3,0.1,0.5,0.3,0.7s0.5,0.3,0.8,0.3c0.3,0,0.5-0.1,0.7-0.3 c0.2-0.2,0.3-0.4,0.3-0.7c0-0.3-0.1-0.5-0.3-0.7C14.8,12.8,14.5,12.7,14.3,12.7z M21.9,13.7c0-2.8-2.6-5.2-5.7-5.2 c-3.2,0-5.7,2.3-5.7,5.2c0,2.8,2.6,5.2,5.7,5.2c0.7,0,1.5-0.1,2.1-0.4L20.8,20l-0.7-2.3C21.3,16.8,21.9,15.3,21.9,13.7z M9.1,10.1 c-0.3,0-0.6,0.1-0.9,0.3c-0.3,0.2-0.5,0.5-0.5,0.8c0,0.3,0.1,0.6,0.4,0.9C8.3,12.3,8.6,12.5,9,12.5c0.4,0,0.7-0.1,1-0.4 c0.3-0.3,0.4-0.6,0.4-0.9c0-0.3-0.1-0.6-0.4-0.8C9.7,10.2,9.4,10.1,9.1,10.1z M3.8,10.1C3.5,10.1,3.2,10.2,2.9,10.4 C2.6,10.6,2.5,10.9,2.5,11.2c0,0.3,0.1,0.6,0.4,0.8c0.3,0.3,0.6,0.4,1,0.4c0.4,0,0.7-0.1,1-0.4c0.3-0.3,0.4-0.6,0.4-0.9 c0-0.3-0.1-0.6-0.4-0.8C4.5,10.2,4.2,10.1,3.8,10.1z M11.3,10.9C11.3,7,8,3.8,4.1,3.8C1.8,3.8,0,5.7,0,8c0,1.2,0.5,2.4,1.4,3.2 L0.9,13l1.8-0.9C3.3,12.3,4.2,12.5,5,12.5C8.5,12.5,11.3,11.8,11.3,10.9z"/></svg>
-                </button>
-            </div>
-            <p class="mt-12 text-xs font-bold text-gray-500 uppercase tracking-widest">© 2024 Jialin Su. Crafted with Pulse Style.</p>
+            <button onclick="toggleModal()" class="inline-flex items-center space-x-2 bg-white text-black px-8 py-3 rounded-full font-black hover:bg-lime hover:scale-105 transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.3,12.7c-0.2,0-0.5,0.1-0.7,0.2c-0.2,0.1-0.4,0.4-0.4,0.6c0,0.3,0.1,0.5,0.3,0.7c0.2,0.2,0.5,0.3,0.8,0.3 c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.3-0.7c0-0.3-0.1-0.5-0.3-0.7C8.8,12.8,8.6,12.7,8.3,12.7z M14.3,12.7 c-0.2,0-0.5,0.1-0.7,0.2c-0.2,0.1-0.4,0.4-0.4,0.6c0,0.3,0.1,0.5,0.3,0.7s0.5,0.3,0.8,0.3c0.3,0,0.5-0.1,0.7-0.3 c0.2-0.2,0.3-0.4,0.3-0.7c0-0.3-0.1-0.5-0.3-0.7C14.8,12.8,14.5,12.7,14.3,12.7z M21.9,13.7c0-2.8-2.6-5.2-5.7-5.2 c-3.2,0-5.7,2.3-5.7,5.2c0,2.8,2.6,5.2,5.7,5.2c0.7,0,1.5-0.1,2.1-0.4L20.8,20l-0.7-2.3C21.3,16.8,21.9,15.3,21.9,13.7z M9.1,10.1 c-0.3,0-0.6,0.1-0.9,0.3c-0.3,0.2-0.5,0.5-0.5,0.8c0,0.3,0.1,0.6,0.4,0.9C8.3,12.3,8.6,12.5,9,12.5c0.4,0,0.7-0.1,1-0.4 c0.3-0.3,0.4-0.6,0.4-0.9c0-0.3-0.1-0.6-0.4-0.8C9.7,10.2,9.4,10.1,9.1,10.1z M3.8,10.1C3.5,10.1,3.2,10.2,2.9,10.4 C2.6,10.6,2.5,10.9,2.5,11.2c0,0.3,0.1,0.6,0.4,0.8c0.3,0.3,0.6,0.4,1,0.4c0.4,0,0.7-0.1,1-0.4c0.3-0.3,0.4-0.6,0.4-0.9 c0-0.3-0.1-0.6-0.4-0.8C4.5,10.2,4.2,10.1,3.8,10.1z M11.3,10.9C11.3,7,8,3.8,4.1,3.8C1.8,3.8,0,5.7,0,8c0,1.2,0.5,2.4,1.4,3.2 L0.9,13l1.8-0.9C3.3,12.3,4.2,12.5,5,12.5C8.5,12.5,11.3,11.8,11.3,10.9z"/></svg>
+                <span>Add my WeChat</span>
+            </button>
+            <p class="mt-20 text-[10px] text-gray-600 tracking-widest uppercase italic">© 2024 Jialin Su. Overseas Growth Strategist.</p>
         </div>
     </footer>
 
-    <!-- 微信二维码弹窗 (Modal) -->
-    <div id="wechat-modal" class="fixed inset-0 bg-black/80 z-[100] items-center justify-center p-8" onclick="toggleModal()">
-        <div class="bg-white p-4 rounded-3xl max-w-xs w-full shadow-2xl relative" onclick="event.stopPropagation()">
+    <!-- WeChat Modal -->
+    <div id="wechat-modal" class="fixed inset-0 bg-black/90 z-[100] items-center justify-center p-8" onclick="toggleModal()">
+        <div class="bg-white p-6 rounded-3xl max-w-xs w-full shadow-2xl relative" onclick="event.stopPropagation()">
+            <!-- 请确保二维码图片名为 wechat_qr.jpg -->
             <img src="wechat_qr.jpg" alt="WeChat QR Code" class="w-full h-auto rounded-xl">
-            <p class="text-center mt-4 font-bold text-gray-800">扫一扫，添加我为朋友</p>
-            <button class="absolute -top-4 -right-4 bg-black text-white w-10 h-10 rounded-full font-bold" onclick="toggleModal()">✕</button>
+            <p class="text-center mt-4 font-bold text-gray-800">扫码建立业务联系</p>
+            <button class="absolute -top-3 -right-3 bg-red-500 text-white w-8 h-8 rounded-full font-bold shadow-lg" onclick="toggleModal()">✕</button>
         </div>
     </div>
 
